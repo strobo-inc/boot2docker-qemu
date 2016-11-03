@@ -5,13 +5,12 @@ MAINTAINER dan@typeamachines.com
 RUN echo "binfmt_misc /proc/sys/binfmt_misc	defaults 0 0" >> $ROOTFS/etc/fstab
 
 # Install qemu-arm and its dependencies.
-ENV TCZ_DEPS qemu-arm \
+ENV TCZ_DEPS qemu \
 			   SDL libmad \
 			   glib2 libffi \
 			   libusb udev-lib \
 			   ncurses ncurses-common \
- 			   pixman \
-			 qemu-common
+ 			   pixman
 
 RUN set -ex && \
     for dep in $TCZ_DEPS; do \
